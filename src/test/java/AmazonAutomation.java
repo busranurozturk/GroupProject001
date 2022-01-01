@@ -44,7 +44,7 @@ public class AmazonAutomation {
 
 
      @Test
-     public void amazon() {
+     public void amazon() throws InterruptedException {
          WebDriver driver = WebDriverFactory.getDriver("chrome");
          driver.get("http://automationpractice.com/index.php");
          WebElement signInButton = driver.findElement(By.xpath("//*[@*='login']"));
@@ -52,6 +52,23 @@ public class AmazonAutomation {
          //3
          WebElement emailInputBox = driver.findElement(By.cssSelector("#email_create"));
          emailInputBox.sendKeys("james_bond_007@gmail.com");
+
+
+
+
+
+
+
+
+
+         // 6. Click on Register button. by Mahammad
+         //onceki stepler daha yukariya eklene bilir.
+         Thread.sleep(2000);
+         WebElement registerButton= driver.findElement(By.xpath("//span[.=\"Register\"]"));
+         registerButton.click();
+
+
+
 
      }
 
