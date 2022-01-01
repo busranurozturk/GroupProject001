@@ -22,10 +22,23 @@ public class AmazonAutomation {
     6. Click on Register button. muhammad
     7. Validate that user is created.*/ // orhan
 
+
     WebDriver driver;
+
+     @Test
+     public void amazon() throws InterruptedException {
+         WebDriver driver = WebDriverFactory.getDriver("chrome");
+         driver.get("http://automationpractice.com/index.php");
+         WebElement signInButton = driver.findElement(By.xpath("//*[@*='login']"));
+         signInButton.click();
+         //3
+         WebElement emailInputBox = driver.findElement(By.cssSelector("#email_create"));
+         emailInputBox.sendKeys("james_bond_007@gmail.com");
+
 
     @BeforeMethod
     public void setUp(){
+
 
         driver= WebDriverFactory.getDriver("chrome");
     }
@@ -34,10 +47,17 @@ public class AmazonAutomation {
         Thread.sleep(3000);
         driver.quit();
 
+        //4-Step
+         Thread.sleep(2000);
+         WebElement accountButton = driver.findElement(By.xpath("(//button/span)[2]"));
+         accountButton.click();
+
+
     }
 
          @Test
      public void amazon() throws InterruptedException {
+
 
          driver.get("http://automationpractice.com/index.php");
          WebElement signInButton = driver.findElement(By.xpath("//*[@*='login']"));
@@ -46,6 +66,16 @@ public class AmazonAutomation {
          WebElement emailInputBox = driver.findElement(By.cssSelector("#email_create"));
          emailInputBox.sendKeys("james_bond_007@gmail.com");
          Thread.sleep(3000);
+
+
+
+         // 6. Click on Register button. by Mahammad
+         //onceki stepler daha yukariya eklene bilir.
+         Thread.sleep(2000);
+         WebElement registerButton= driver.findElement(By.xpath("//span[.=\"Register\"]"));
+         registerButton.click();
+
+
 
          //4-Step
          WebElement accountButton = driver.findElement(By.cssSelector("#SubmitCreate"));
