@@ -6,6 +6,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class WebDriverFactory {
+
     public static WebDriver getDriver(String browserType){
         WebDriver driver = null;
 
@@ -21,5 +22,3 @@ public class WebDriverFactory {
         }
         return driver;
     }
-}
-

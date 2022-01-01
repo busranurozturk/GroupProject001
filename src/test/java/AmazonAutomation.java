@@ -1,6 +1,14 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+import utilities.WebDriverFactory;
+
+
+
 import org.testng.annotations.Test;
 import utilities.WebDriverFactory;
 
@@ -13,6 +21,28 @@ public class AmazonAutomation {
     5. Enter your Personal Information, Address and Contact info. ismail
     6. Click on Register button. muhammad
     7. Validate that user is created.*/ // orhan
+
+
+
+
+
+
+    @Test
+
+    public void AccountButton() throws InterruptedException {
+        WebDriver driver = WebDriverFactory.getDriver("chrome");
+        driver.get("http://automationpractice.com/index.php");
+
+    //4-Step
+    Thread.sleep(2000);
+    WebElement accountButton = driver.findElement(By.xpath("(//button/span)[2]"));
+    accountButton.click();
+
+
+}
+
+
+
      @Test
      public void amazon() {
          WebDriver driver = WebDriverFactory.getDriver("chrome");
@@ -20,4 +50,5 @@ public class AmazonAutomation {
          WebElement signInButton = driver.findElement(By.xpath("//*[@*='login']"));
          signInButton.click();
      }
+
 }
