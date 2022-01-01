@@ -22,27 +22,6 @@ public class AmazonAutomation {
     6. Click on Register button. muhammad
     7. Validate that user is created.*/ // orhan
 
-
-
-
-
-
-    @Test
-
-    public void AccountButton() throws InterruptedException {
-        WebDriver driver = WebDriverFactory.getDriver("chrome");
-        driver.get("http://automationpractice.com/index.php");
-
-    //4-Step
-    Thread.sleep(2000);
-    WebElement accountButton = driver.findElement(By.xpath("(//button/span)[2]"));
-    accountButton.click();
-
-
-}
-
-
-
      @Test
      public void amazon() throws InterruptedException {
          WebDriver driver = WebDriverFactory.getDriver("chrome");
@@ -54,7 +33,10 @@ public class AmazonAutomation {
          emailInputBox.sendKeys("james_bond_007@gmail.com");
 
 
-
+        //4-Step
+         Thread.sleep(2000);
+         WebElement accountButton = driver.findElement(By.xpath("(//button/span)[2]"));
+         accountButton.click();
 
 
 
@@ -66,8 +48,6 @@ public class AmazonAutomation {
          Thread.sleep(2000);
          WebElement registerButton= driver.findElement(By.xpath("//span[.=\"Register\"]"));
          registerButton.click();
-
-
 
 
      }
