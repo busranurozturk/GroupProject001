@@ -1,11 +1,16 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import utilities.WebDriverFactory;
 
+
+
+import org.testng.annotations.Test;
+import utilities.WebDriverFactory;
 
 public class AmazonAutomation {
      /*Steps to Automate:
@@ -36,5 +41,14 @@ public class AmazonAutomation {
 
 }
 
+
+
+     @Test
+     public void amazon() {
+         WebDriver driver = WebDriverFactory.getDriver("chrome");
+         driver.get("http://automationpractice.com/index.php");
+         WebElement signInButton = driver.findElement(By.xpath("//*[@*='login']"));
+         signInButton.click();
+     }
 
 }
