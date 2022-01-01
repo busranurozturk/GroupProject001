@@ -2,6 +2,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -25,62 +26,51 @@ public class AmazonAutomation {
 
     WebDriver driver;
 
-     @Test
-     public void amazon() throws InterruptedException {
-         WebDriver driver = WebDriverFactory.getDriver("chrome");
-         driver.get("http://automationpractice.com/index.php");
-         WebElement signInButton = driver.findElement(By.xpath("//*[@*='login']"));
-         signInButton.click();
-         //3
-         WebElement emailInputBox = driver.findElement(By.cssSelector("#email_create"));
-         emailInputBox.sendKeys("james_bond_007@gmail.com");
+         @BeforeMethod
+         public void setUp() {
 
+             driver = WebDriverFactory.getDriver("chrome");
+         }
 
-    @BeforeMethod
-    public void setUp(){
-
-
-        driver= WebDriverFactory.getDriver("chrome");
-    }
-    @AfterMethod
-    public void tearDown() throws InterruptedException {
-        Thread.sleep(3000);
-        driver.quit();
-
-        //4-Step
-         Thread.sleep(2000);
-         WebElement accountButton = driver.findElement(By.xpath("(//button/span)[2]"));
-         accountButton.click();
-
-
-    }
-
-         @Test
-     public void amazon() throws InterruptedException {
-
-
-         driver.get("http://automationpractice.com/index.php");
-         WebElement signInButton = driver.findElement(By.xpath("//*[@*='login']"));
-         signInButton.click();
-         //3
-         WebElement emailInputBox = driver.findElement(By.cssSelector("#email_create"));
-         emailInputBox.sendKeys("james_bond_007@gmail.com");
-         Thread.sleep(3000);
+         @AfterMethod
+         public void tearDown () throws InterruptedException {
+             Thread.sleep(3000);
+             driver.quit();
+         }
 
 
 
-         // 6. Click on Register button. by Mahammad
-         //onceki stepler daha yukariya eklene bilir.
-         Thread.sleep(2000);
-         WebElement registerButton= driver.findElement(By.xpath("//span[.=\"Register\"]"));
-         registerButton.click();
+             @Test
+                public void amazon() throws InterruptedException {
+
+                 driver.get("http://automationpractice.com/index.php");
+                 WebElement signInButton = driver.findElement(By.xpath("//*[@*='login']"));
+                 signInButton.click();
+                 //3
+                 WebElement emailInputBox = driver.findElement(By.cssSelector("#email_create"));
+                 emailInputBox.sendKeys("james_bond_007@gmail.com");
+
+                 //4-Step
+                 WebElement accountButton = driver.findElement(By.cssSelector("#SubmitCreate"));
+                 accountButton.click();
+                 Thread.sleep(3000);
+
+                // 6. Click on Register button. by Mahammad
+                 //onceki stepler daha yukariya eklene bilir.
+
+                 WebElement registerButton = driver.findElement(By.xpath("//span[.='Register']"));
+                 registerButton.click();
+                 Thread.sleep(3000);
+
+                 //7-Step
+                 WebElement userInfo = driver.findElement(By.xpath("//*[@class='header_user_info']"));
+                 String text = userInfo.getText();
+                 System.out.println("text = " + text);
+
+         }
+
+         }
 
 
 
-         //4-Step
-         WebElement accountButton = driver.findElement(By.cssSelector("#SubmitCreate"));
-         accountButton.click();
-         Thread.sleep(3000);
-     }
 
-}
