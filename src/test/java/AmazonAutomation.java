@@ -49,6 +49,10 @@ public class AmazonAutomation {
          driver.get("http://automationpractice.com/index.php");
          WebElement signInButton = driver.findElement(By.xpath("//*[@*='login']"));
          signInButton.click();
+         //3
+         WebElement emailInputBox = driver.findElement(By.cssSelector("#email_create"));
+         emailInputBox.sendKeys("james_bond_007@gmail.com");
+
      }
 
 }
