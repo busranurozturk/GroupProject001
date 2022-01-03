@@ -35,7 +35,7 @@ public class AmazonAutomation {
          @AfterMethod
          public void tearDown () throws InterruptedException {
              Thread.sleep(3000);
-             driver.quit();
+            // driver.quit();
          }
 
 
@@ -54,6 +54,43 @@ public class AmazonAutomation {
                  WebElement accountButton = driver.findElement(By.cssSelector("#SubmitCreate"));
                  accountButton.click();
                  Thread.sleep(3000);
+
+                 //5. Enter your Personal Information, Address and Contact info.
+                 driver.findElement(By.cssSelector("#id_gender1")).click();
+                 driver.findElement(By.cssSelector("#customer_firstname")).sendKeys("Ismail");
+                 Thread.sleep(2000);
+
+                 driver.findElement(By.cssSelector("#customer_lastname")).sendKeys("Duman");
+                 Thread.sleep(2000);
+
+                 driver.findElement(By.cssSelector("#passwd")).sendKeys("smlldmn");
+                 Thread.sleep(2000);
+                 driver.findElement(By.cssSelector("#uniform-days")).click();
+                 driver.findElement(By.xpath("//select/option[@value=\"5\"][1]")).click();
+                 driver.findElement(By.cssSelector("#uniform-months")).click();
+                 driver.findElement(By.xpath("(//select/option[@value='2'][1])[2]")).click();
+                 driver.findElement(By.cssSelector("#uniform-years")).click();
+                 driver.findElement(By.xpath("//select/option[@value='1984']")).click();
+                 driver.findElement(By.cssSelector("#optin")).click();
+
+
+
+                 Thread.sleep(2000);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
                 // 6. Click on Register button. by Mahammad
                  //onceki stepler daha yukariya eklene bilir.
