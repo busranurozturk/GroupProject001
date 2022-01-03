@@ -48,7 +48,7 @@ public class AmazonAutomation {
                  signInButton.click();
                  //3
                  WebElement emailInputBox = driver.findElement(By.cssSelector("#email_create"));
-                 emailInputBox.sendKeys("james_bond_007@gmail.com");
+                 emailInputBox.sendKeys("james_bonds_007@gmail.com");
 
                  //4-Step
                  WebElement accountButton = driver.findElement(By.cssSelector("#SubmitCreate"));
@@ -57,13 +57,13 @@ public class AmazonAutomation {
 
                  //5. Enter your Personal Information, Address and Contact info.
                  driver.findElement(By.cssSelector("#id_gender1")).click();
-                 driver.findElement(By.cssSelector("#customer_firstname")).sendKeys("Ismail");
+                 driver.findElement(By.cssSelector("#customer_firstname")).sendKeys("James");
                  Thread.sleep(2000);
 
-                 driver.findElement(By.cssSelector("#customer_lastname")).sendKeys("Duman");
+                 driver.findElement(By.cssSelector("#customer_lastname")).sendKeys("Bond");
                  Thread.sleep(2000);
 
-                 driver.findElement(By.cssSelector("#passwd")).sendKeys("smlldmn");
+                 driver.findElement(By.cssSelector("#passwd")).sendKeys("jmsbnd007");
                  Thread.sleep(2000);
                  driver.findElement(By.cssSelector("#uniform-days")).click();
                  driver.findElement(By.xpath("//select/option[@value=\"5\"][1]")).click();
@@ -72,6 +72,50 @@ public class AmazonAutomation {
                  driver.findElement(By.cssSelector("#uniform-years")).click();
                  driver.findElement(By.xpath("//select/option[@value='1984']")).click();
                  driver.findElement(By.cssSelector("#optin")).click();
+                 Thread.sleep(1000);
+                 WebElement inputFirstName=driver.findElement(By.xpath("//input[@id='firstname']"));
+                 inputFirstName.click();
+                 inputFirstName.clear();
+                 Thread.sleep(1000);
+                 inputFirstName.sendKeys("James");
+                 Thread.sleep(1000);
+                 WebElement inputLastName=driver.findElement(By.xpath("//input[@id='lastname']"));
+                 inputLastName.click();
+                 inputLastName.clear();
+                 Thread.sleep(1000);
+                 inputLastName.sendKeys("Bond");
+                 Thread.sleep(1000);
+                 driver.findElement(By.xpath("//input[@id='company']")).sendKeys("Cybertek");
+                 driver.findElement(By.id("address1")).sendKeys("Top Secret");
+                 Thread.sleep(1000);
+                 driver.findElement(By.id("city")).sendKeys("Tysons");
+                 Thread.sleep(1000);
+                 driver.findElement(By.id("uniform-id_state")).click();
+                 driver.findElement(By.xpath("//select/option[@value='46']")).click();
+                 Thread.sleep(1000);
+                 WebElement zipCode=driver.findElement(By.cssSelector("#postcode"));
+              zipCode.click();
+                 Thread.sleep(1000);
+               zipCode.sendKeys("25689");
+                 Thread.sleep(1000);
+                 driver.findElement(By.cssSelector("#phone")).sendKeys("007007007");
+                 Thread.sleep(1000);
+                 WebElement alias=   driver.findElement(By.cssSelector("#alias"));
+                 alias.click();
+                 alias.clear();
+                 alias.sendKeys("anywhere in the world");
+
+                 Thread.sleep(1000);
+
+
+
+
+
+
+
+
+
+
 
 
 
