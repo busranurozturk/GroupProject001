@@ -105,7 +105,7 @@ public class AmazonAutomation {
                  alias.clear();
                  alias.sendKeys("anywhere in the world");
 
-                 Thread.sleep(1000);
+
 
 
 
