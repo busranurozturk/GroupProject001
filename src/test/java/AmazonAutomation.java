@@ -13,6 +13,8 @@ import utilities.WebDriverFactory;
 import org.testng.annotations.Test;
 import utilities.WebDriverFactory;
 
+import java.util.concurrent.TimeUnit;
+
 public class AmazonAutomation {
      /*Steps to Automate:
     1. Open this url  http://automationpractice.com/index.php
@@ -30,6 +32,7 @@ public class AmazonAutomation {
          public void setUp() {
 
              driver = WebDriverFactory.getDriver("chrome");
+             driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
          }
 
          @AfterMethod
@@ -37,9 +40,6 @@ public class AmazonAutomation {
              Thread.sleep(3000);
             // driver.quit();
          }
-
-
-
              @Test
                 public void amazon() throws InterruptedException {
 
@@ -48,7 +48,7 @@ public class AmazonAutomation {
                  signInButton.click();
                  //3
                  WebElement emailInputBox = driver.findElement(By.cssSelector("#email_create"));
-                 emailInputBox.sendKeys("james_bonds_007@gmail.com");
+                 emailInputBox.sendKeys("james_bonds_009@gmail.com");
 
                  //4-Step
                  WebElement accountButton = driver.findElement(By.cssSelector("#SubmitCreate"));
@@ -104,37 +104,7 @@ public class AmazonAutomation {
                  alias.click();
                  alias.clear();
                  alias.sendKeys("anywhere in the world");
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                  Thread.sleep(2000);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
                 // 6. Click on Register button. by Mahammad
                  //onceki stepler daha yukariya eklene bilir.
